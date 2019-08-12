@@ -1,0 +1,60 @@
+MODEL: 3                      # 1: structure model, 2: inpaint model, 3: structure-inpaint model
+VERBOSE: 1                    # turns on verbose mode in the output console
+GPU: [1]                      # gpu ids 
+
+
+MAX_ITERS: 8e6                # maximum number of iterations to train the model
+LR: 0.0001                    # learning rate
+BETA1: 0                      # adam optimizer beta1
+BETA2: 0.999                  # adam optimizer beta2
+LR_POLICY: constant           # the method to adjust learning rate (eg: constant|step)
+STEP_SIZE: 100000             # Period of learning rate decay (only used when choosing "step" as the lr adjusment method)
+GAMMA: 0.5                    # Multiplicative factor of learning rate decay. (only used when choosing "step" as the lr adjusment method)
+INIT_TYPE: xavier             # initialization [gaussian/kaiming/xavier/orthogonal]
+
+SAVE_INTERVAL: 30             # how many iterations to wait before saving model (0: never)
+SAVE_LATEST: 10               # how many iterations to wait before saving lastest model (0: never)
+SAMPLE_INTERVAL: 10           # how many iterations to wait before sampling (0: never)
+SAMPLE_SIZE: 4                # number of images to sample
+EVAL_INTERVAL: 1000           # how many iterations to wait before model evaluation (0: never)
+LOG_INTERVAL: 10              # how many iterations to wait before logging training status (0: never)
+WHICH_ITER: latest            # which iterations to load
+
+DIS_GAN_LOSS: lsgan           # type of gan loss 
+
+STRUCTURE_L1: 4               # structure net parameter of l1 loss  
+STRUCTURE_ADV_GEN: 1          # structure net parameter of gan loss  
+
+FLOW_ADV_GEN: 1               # texture net parameter of gan loss  
+FLOW_L1: 5                    # texture net parameter of l1 loss  
+FLOW_CORRECTNESS: 0.25        # texture net parameter of sampling correctness loss  
+VGG_STYLE: 250                # texture net parameter of vgg_style loss (Optional loss on stage_3)  
+VGG_CONTENT: 0.1              # texture net parameter of vgg_content loss (Optional loss on stage_3) 
+
+
+TRAIN_BATCH_SIZE: 8           # batch size
+DATA_TRAIN_SIZE: 256          # image size for training 
+DATA_TEST_SIZE: False         # image size for testing (False for never resize)
+DATA_FLIP: False              # filp image or not when training 
+DATA_CROP: FALSE #[537,537]   # crop size when training (False for never crop )
+DATA_MASK_TYPE: from_file     # mask type (random_bbox|random_free_form|from_file)
+DATA_RANDOM_BBOX_SETTING:     # parameters for random_bbox
+  random_size: False          # random hole size according to shape [0.4*shape shape]
+  shape: [80, 80]             # hole size
+  margin: [0, 0]              # minimum distance from the image boundary
+  num: 3                        
+DATA_RANDOM_FF_SETTING:       #parameters for random_free_form
+  mv: 5
+  ma: 4.0
+  ml: 40
+  mbw: 10
+DATA_MASK_FILE: ./txt/irregular_mask.txt #parameters for from_file
+
+DATA_TRAIN_GT: ./txt/places_gt_train.txt
+DATA_TRAIN_STRUCTURE: ./txt/places_structure_train.txt
+DATA_VAL_GT: ./txt/places_gt_val.txt
+DATA_VAL_STRUCTURE: ./txt/places_structure_val.txt
+DATA_VAL_MASK: ./txt/places_mask_val.txt
+
+
+
