@@ -18,8 +18,8 @@ We propose a two-stage image inpainting network which splits the task into two p
 3. NVIDIA GPU + CUDA 9.0
 4. Tensorboard
 5. Matlab
-
-###Installation
+ 
+### Installation
 
 1. Clone this repository
 
