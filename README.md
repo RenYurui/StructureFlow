@@ -3,7 +3,7 @@ Code for our paper "[StructureFlow: Image Inpainting via Structure-aware Appeara
 
 ### Introduction
 
-We propose a two-stage image inpainting network which splits the task into two parts: **structure reconstruction** and **texture generation**. In the ﬁrst stage, edge-preserved smooth images are employed to train a structure reconstructor which completes the missing structures of the inputs. In the second stage, based on the reconstructed structures, a texture generator using appearance ﬂow is designed to yield image details. We propose to us Appearance Flow in the texture generation to sample features from existing regions.
+We propose a two-stage image inpainting network which splits the task into two parts: **structure reconstruction** and **texture generation**. In the ﬁrst stage, edge-preserved smooth images are employed to train a structure reconstructor which completes the missing structures of the inputs. In the second stage, based on the reconstructed structures, a texture generator using appearance ﬂow is designed to yield image details. 
 
 <p align='center'>  
   <img src='https://user-images.githubusercontent.com/30292465/62820141-8e634300-bb92-11e9-9895-570f020edc47.png' width='500'/>
