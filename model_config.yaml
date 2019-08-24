@@ -12,12 +12,12 @@ STEP_SIZE: 100000             # Period of learning rate decay (only used when ch
 GAMMA: 0.5                    # Multiplicative factor of learning rate decay. (only used when choosing "step" as the lr adjusment method)
 INIT_TYPE: xavier             # initialization [gaussian/kaiming/xavier/orthogonal]
 
-SAVE_INTERVAL: 30             # how many iterations to wait before saving model (0: never)
-SAVE_LATEST: 10               # how many iterations to wait before saving lastest model (0: never)
-SAMPLE_INTERVAL: 10           # how many iterations to wait before sampling (0: never)
+SAVE_INTERVAL: 10000          # how many iterations to wait before saving model 
+SAVE_LATEST: 1000             # how many iterations to wait before saving lastest model 
+SAMPLE_INTERVAL: 1000         # how many iterations to wait before sampling 
 SAMPLE_SIZE: 4                # number of images to sample
-EVAL_INTERVAL: 1000           # how many iterations to wait before model evaluation (0: never)
-LOG_INTERVAL: 10              # how many iterations to wait before logging training status (0: never)
+EVAL_INTERVAL: 10000          # how many iterations to wait before model evaluation 
+LOG_INTERVAL: 100             # how many iterations to wait before logging training status 
 WHICH_ITER: latest            # which iterations to load
 
 DIS_GAN_LOSS: lsgan           # type of gan loss 
@@ -36,14 +36,14 @@ TRAIN_BATCH_SIZE: 8           # batch size
 DATA_TRAIN_SIZE: 256          # image size for training 
 DATA_TEST_SIZE: False         # image size for testing (False for never resize)
 DATA_FLIP: False              # filp image or not when training 
-DATA_CROP: FALSE #[537,537]   # crop size when training (False for never crop )
+DATA_CROP: FALSE #[537,537]   # crop size when training (False for never cro)
 DATA_MASK_TYPE: from_file     # mask type (random_bbox|random_free_form|from_file)
 DATA_RANDOM_BBOX_SETTING:     # parameters for random_bbox
   random_size: False          # random hole size according to shape [0.4*shape shape]
   shape: [80, 80]             # hole size
   margin: [0, 0]              # minimum distance from the image boundary
   num: 3                        
-DATA_RANDOM_FF_SETTING:       #parameters for random_free_form
+DATA_RANDOM_FF_SETTING:       # parameters for random_free_form
   mv: 5
   ma: 4.0
   ml: 40
