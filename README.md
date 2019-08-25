@@ -99,7 +99,7 @@ If you find this code is helpful for your research, please cite our paper:
       author = {Ren, Yurui and Yu, Xiaoming and Zhang, Ruonan and Li, Thomas H. and
          Liu, Shan and Li, Ge},
       title = {StructureFlow: Image Inpainting via Structure-aware Appearance Flow},
-      journal = {arXiv e-prints},
+      booktitle={IEEE International Conference on Computer Vision (ICCV)},
       year = {2019},
 }
 ```
