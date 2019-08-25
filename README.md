@@ -96,11 +96,10 @@ If you find this code is helpful for your research, please cite our paper:
 
 ```
 @inproceedings{ren2019structureflow,
-      author = {Ren, Yurui and Yu, Xiaoming and Zhang, Ruonan and Li, Thomas H. and
-         Liu, Shan and Li, Ge},
+      author = {Ren, Yurui and Yu, Xiaoming and Zhang, Ruonan and Li, Thomas H. and Liu, Shan and Li, Ge},
       title = {StructureFlow: Image Inpainting via Structure-aware Appearance Flow},
       booktitle={IEEE International Conference on Computer Vision (ICCV)},
-      year = {2019},
+      year = {2019}
 }
 ```
 
