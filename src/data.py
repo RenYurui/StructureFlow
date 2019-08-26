@@ -252,7 +252,7 @@ def get_params(size, transform_opt):
     else:
         crop = False
     if transform_opt['resize']:
-        resize = transform_opt['resize']
+        resize = [transform_opt['resize'], transform_opt['resize'],]
     else:
         resize = False
     param = {'crop': crop, 'flip': flip, 'resize': resize}
@@ -288,7 +288,7 @@ def transform_image(transform_param, gt_image, structure_image, normalize=True, 
 def __crop(img, pos, size):
     ow, oh = img.size
     x1, y1 = pos
-    tw = th = size
+    tw, th = size
     return img.crop((x1, y1, x1 + tw, y1 + th))
 
 def __flip(img, flip):

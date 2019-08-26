@@ -9,6 +9,7 @@ import torchvision.utils as vutils
 import math
 import shutil
 import tensorboardX
+from itertools import islice
 from torch.utils.data import DataLoader
 from .data import Dataset
 from .utils import Progbar, write_2images, write_2tensorboard, create_dir, imsave
@@ -134,7 +135,9 @@ class StructureFlow():
 
         # TODO: add fid score to evaluate
         with torch.no_grad(): 
-            for items in val_loader:
+            # for items in val_loader:
+            for j, items in enumerate(islice(val_loader, 50)):
+
                 logs = []
                 iteration += 1
                 inputs, smooths, gts, maps = self.cuda(*items)
