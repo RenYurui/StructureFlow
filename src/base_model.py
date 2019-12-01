@@ -30,6 +30,10 @@ class BaseModel(nn.Module):
                 sub_net = getattr(self, net_name)
                 filename = '%s_net_%s.pth' % (which_epoch, net_name)
                 model_name = os.path.join(self.checkpoints_path, filename)
+                print(model_name)
+                if not os.path.isfile(model_name):
+                    print('checkpoint %s do not exist'%model_name)
+                    continue                
                 self.load_networks(model_name, sub_net, net_name)
                 self.iterations = get_iteration(self.checkpoints_path, filename, net_name)
                 print('Resume %s from iteration %s' % (net_name, which_epoch))

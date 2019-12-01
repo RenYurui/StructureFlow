@@ -114,8 +114,9 @@ class Dataset(data.Dataset):
                     mask = transFunc.vflip(mask)  
             else:
                 mask = gray_loader(self.mask_image_files[index])
-            mask = transFunc.resize(mask, size=image_shape)  
-            mask = transFunc.to_tensor(mask)      
+            mask = transFunc.resize(mask, size=image_shape) 
+            mask = transFunc.to_tensor(mask)    
+            mask = (mask > 0).float()
             return mask
         else:
             raise(RuntimeError("No such mask type: %s"%self.mask_type))

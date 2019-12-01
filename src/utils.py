@@ -9,6 +9,7 @@ import torch.nn.init as init
 import math
 import torch
 import torchvision.utils as vutils
+from natsort import natsorted
 
 def create_dir(dir):
     if not os.path.exists(dir):
@@ -263,7 +264,7 @@ def get_iteration(dir_name, file_name, net_name):
               os.path.isfile(os.path.join(dir_name, f)) and (not 'latest' in f) and (".pt" in f) and (net_name in f)]
         if gen_models == []:
             return 0
-        model_name = os.path.basename(sorted(gen_models)[-1])
+        model_name = os.path.basename(natsorted(gen_models)[-1])
     else:
         model_name = file_name
     iterations = int(model_name.replace('_net_'+net_name+'.pth', ''))

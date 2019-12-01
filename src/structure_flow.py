@@ -33,6 +33,12 @@ class StructureFlow():
         else:
             self.flow_model.load(self.config.WHICH_ITER)
 
+        if self.config.MODEL == 1:
+            self.stage_name='structure_reconstructor'
+        elif self.config.MODEL == 2:
+            self.stage_name='texture_generator'
+        elif self.config.MODEL == 3:
+            self.stage_name='joint_train'
 
     def train(self):
         train_writer = self.obtain_log(self.config)
@@ -235,7 +241,7 @@ class StructureFlow():
 
 
     def obtain_log(self, config):
-        log_dir = os.path.join(config.PATH, config.NAME, 'log')
+        log_dir = os.path.join(config.PATH, config.NAME, self.stage_name+'_log')
         if os.path.exists(log_dir) and config.REMOVE_LOG:
             shutil.rmtree(log_dir)
         train_writer = tensorboardX.SummaryWriter(log_dir)
