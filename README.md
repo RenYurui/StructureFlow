@@ -1,5 +1,5 @@
 # StructureFlow
-Code for our paper "[StructureFlow: Image Inpainting via Structure-aware Appearance Flow](https://arxiv.org/abs/1908.03852)" (to appear in ICCV 2019)
+Code for our paper "[StructureFlow: Image Inpainting via Structure-aware Appearance Flow](https://arxiv.org/abs/1908.03852)" (ICCV 2019)
 
 ### Introduction
 
