@@ -13,7 +13,7 @@ function generate_structure_images(dataset_path, output_path)
        end
        imwrite(S, write_name);      
        
-       if mod(i,100)==0
+       if mod(i,100)==1
           fprintf('total: %d; output: %d; completed: %f%% \n',num_image, i, (i/num_image)*100) ;
        end
     end
