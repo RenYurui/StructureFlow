@@ -18,7 +18,7 @@ We propose a two-stage image inpainting network which splits the task into two p
 3. NVIDIA GPU + CUDA 9.0
 4. Tensorboard
 5. Matlab
- 
+
 ### Installation
 
 1. Clone this repository
@@ -46,10 +46,10 @@ We train our model on three public datasets including Places2, Celeba, and Paris
 3. [Paris Street-View](https://github.com/pathak22/context-encoder) 
 4. [Irregular Masks](http://masc.cs.gmu.edu/wiki/partialconv)
 
-After downloading the datasets, The edge-preserved smooth images can be obtained by using [RTV smooth method](http://www.cse.cuhk.edu.hk/~leojia/projects/texturesep/). Download the Matlab code from the project website and put it into  folder [`scripts/matlab`](scripts/matlab). Run generation function [`scripts/matlab/generate_structre_images.m`](scripts/matlab/generate_structure_images.m) in your matlab. For example, if you want to generate smooth images for Places2, you can run the following code:
+After downloading the datasets, The edge-preserved smooth images can be obtained by using [RTV smooth method](http://www.cse.cuhk.edu.hk/~leojia/projects/texturesep/). Run generation function [`scripts/matlab/generate_structre_images.m`](scripts/matlab/generate_structure_images.m) in your matlab. For example, if you want to generate smooth images for Places2, you can run the following code:
 
 ```matlab
-generate_structure_images("path to Places2 list file", "path to output folder");
+generate_structure_images("path to Places2 dataset root", "path to output folder");
 ```
 
 Finally, you can generate the image list using script  [`scripts/flist.py`](scripts/flist.py) for training and testing.
