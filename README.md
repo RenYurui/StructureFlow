@@ -1,5 +1,5 @@
 # StructureFlow
-Code for our paper "[StructureFlow: Image Inpainting via Structure-aware Appearance Flow](https://arxiv.org/abs/1908.03852)" (to appear in ICCV 2019)
+Code for our paper "[StructureFlow: Image Inpainting via Structure-aware Appearance Flow](https://arxiv.org/abs/1908.03852)" (ICCV 2019)
 
 ### Introduction
 
@@ -71,7 +71,7 @@ To output the generated results of the inputs, you can use the [test.py](test.py
 ```bash
 python test.py \
 --name=[the name of your experiment] \
---path=[path to the results] \
+--path=[path of your experiments] \
 --input=[input images] \
 --mask=[mask images] \
 --structure=[structure images] \
@@ -88,7 +88,22 @@ python ./scripts/metrics.py \
 --fid_real_path=[path to the real images using to calculate fid]
 ```
 
-**The pre-trained weights will be released soon.**
+**The pre-trained weights can be downloaded from [Places2](https://drive.google.com/open?id=1K7U6fYthC4Acsx0GBde5iszHJWymyv1A), [Celeba](https://drive.google.com/open?id=1PrLgcEd964etxZcHIOE93uUONB9-b6pI), [Paris Street](https://drive.google.com/open?id=18AQpgsYZtA_eL-aJb6n8-geWLdihwXAi).**
+
+Download the checkpoints and save them to './path_of_your_experiments/name_of_your_experiment/checkpoints'
+
+For example you can download the checkpoints of Places2 and save them to './results/places/checkpoints' and run the following code:
+
+```bash
+python test.py \
+--name=places \
+--path=results \
+--input=./example/places/1.jpg \
+--mask=./example/places/1_mask.png \
+--structure=./example/places/1_tsmooth.png \
+--output=./result_images \
+--model=3
+```
 
 ### Citation
 
